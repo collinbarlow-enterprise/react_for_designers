@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 
 import Header from '../components/header'
 import './index.css'
+import Card from '../components/Card'
 
 const Layout = ({ children, data }) => (
   <div>
