@@ -11,8 +11,8 @@ const Layout = ({ children, data }) => (
     <Helmet
       title={data.site.siteMetadata.title}
       meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
+        { name: 'description', content: data.site.siteMetadata.description },
+        { name: 'keywords', content: data.site.siteMetadata.keywords },
       ]}
     />
     <Header />
@@ -28,11 +28,14 @@ Layout.propTypes = {
 export default Layout
 
 export const query = graphql`
-  query SiteTitleQuery {
-    site {
-      siteMetadata {
-        title
-      }
+query SiteTitleQuery {
+  site {
+    siteMetadata {
+      title
+      description
+      keywords
     }
   }
+}
+
 `
